@@ -11,8 +11,7 @@ public class ProgramaçãoIICaixaEletronico {
        
        c.abrirconta("juruna", "0500", "853");
        
-       JOptionPane.showInputDialog("Quanto voce quer depositar?");
-       deucerto= c.depositar(JOptionPane.showInputDialog("Quanto voce quer depositar?"));
+       deucerto= c.depositar(13.0);
        
        if (deucerto == true){
            JOptionPane.showMessageDialog (null,"Deposito realizado com sucesso");
