@@ -1,96 +1,53 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package cinema;
-
-import javax.swing.JOptionPane;
-
-/**
- *
- * @author Aluno
- */
+    import java.util.Scanner;
+    import javax.swing.JOptionPane;
 public class Cinema {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        //JOPTIONPANE
-        
-        String nome;
-        String genero;
-        String nomeator;
-        String anonas,ganhou;
-        String nacionalidade;
-        float durac,cache,ganhos;
-        boolean vencedoroscar;
-        int classif,idad,totalf,totalfa;
-        
+        Scanner entrada = new Scanner (System.in);
         Filme f = new Filme();
-        Ator a = new Ator();
+        Ator a = new Ator ();
         
-        nome=JOptionPane.showInputDialog("Digite o nome do filme");
-        f.atribuirNome(nome);
-              
-        durac=Float.parseFloat(JOptionPane.showInputDialog("Digite a duração"));
-        f.atribuirDura(durac);
+        String nome, duracao, classificacao, genero, ator, idade, atores, datanasc, cachefilme, nacionalidade, vencoscar,
+        totalfilmes, filmeultimo;
         
-        classif=Integer.parseInt(JOptionPane.showInputDialog("Digite a classificação"));
-        f.atribuirClass(classif);
+        atores = JOptionPane.showInputDialog("Informe o ator: ");
+        a.atribuirAtores(atores);
         
-        genero=JOptionPane.showInputDialog("Digite o genero");
-        f.atribuirGenero(genero);
-       
-        JOptionPane.showMessageDialog(null,"   Dados do filme \n"+" Nome do filme:"+ f.retornarNome() + "\n Duração do filme:" + f.retornarDura() + " minutos"+ " \n Classificação do filme: "+ f.retornarClas() + " anos"+"\n Genero do filme : "+ f.retornarGenero());
+        datanasc = JOptionPane.showInputDialog("Informe a data de nascimento do ator: ");
+        a.atribuirDatanasc(datanasc);
         
-        idad=Integer.parseInt(JOptionPane.showInputDialog("Digite a sua idade"));
-        f.atribuirIdade(idad);
+        cachefilme = JOptionPane.showInputDialog("Informe o cache por filme: ");
+        a.atribuirCache(Float.parseFloat(cachefilme));
         
-        nomeator=JOptionPane.showInputDialog("Digite o nome do ator");
-        a.AtribuirNome(nomeator);
+        nacionalidade = JOptionPane.showInputDialog ("Informe a nacionalidade: ");
+        a.atribuirNacionalidade(nacionalidade);
         
-        anonas=JOptionPane.showInputDialog("Digite o ano de nascimnento do ator");
-        a.AtribuirDatanas(anonas);
+        vencoscar = JOptionPane.showInputDialog("Ele é vencedor do oscar? Responda com 'sim' ou 'nao': ");
+        if(vencoscar.equals("sim")==true)
+            
+            a.atribuirVencOscar(true);
+        else 
+            a.atribuirVencOscar(false);
         
-        cache=Float.parseFloat(JOptionPane.showInputDialog("Digite o cache do ator"));
-        a.AtribuirCache(cache);
         
-        nacionalidade=JOptionPane.showInputDialog("Digite a nacionalidade do ator");
-        a.AtribuirNacionalidade(nacionalidade);
+        a.atribuirVencOscar(vencoscar.equals("sim"));
+        totalfilmes = JOptionPane.showInputDialog("Informe o total de filmes realizados por ele: ");
+        a.atribuirTotalFilmes(Integer.parseInt(totalfilmes));
         
-        ganhou = JOptionPane.showInputDialog("Ganhou o oscar(S/N):");
-       
-        if(ganhou.equals("S"))
-       {
-           a.atribuirVencedorOscar(true);
-       }
-       else
-       {
-           a.atribuirVencedorOscar(false);
-       }
-       
-          
-       if(a.retornarVencedorOscar()==true)
-       {
-           ganhou = "Sim";
-       }
-       else
-       {
-           ganhou = "Nao";
-       }
+        filmeultimo = JOptionPane.showInputDialog("Informe quantos filmes foram realizados no último ano: ");
+        a.atribuirFilmeUltimo(Integer.parseInt(filmeultimo));
         
-        totalf=Integer.parseInt(JOptionPane.showInputDialog("Digite o total de filmes do ator:"));
-        a.atribuirTotalFimes(totalf);
+        if(a.retornarVencOscar()== true)
+            vencoscar = "SIM";
+        else
+            vencoscar = "NAO";
         
-        totalfa=Integer.parseInt(JOptionPane.showInputDialog("Digite o total de filmes do ator no ultimo ano:"));
-        a.atribuirTotalFilmesA(totalfa);
-        
-        JOptionPane.showMessageDialog(null," Nome do ator:"+a.retornarNome()+"\n Ano de nascimento do ator"+a.retornarDatanas()+"\n Cache do ator: "+a.retornarCache()+"\n Nacionalidade do ator:"+a.retornarNacionalidade()+"\n Total de filmes:"+a.retornarTotalFilmes()+"\n Total de filmes do ultimo ano "+a.retornarTotalFilmesA()+"\nOs ganhos do ator foi de "+a.retornarganhosator());
-        
+        JOptionPane.showMessageDialog(null, "Dados do filme: \n Nome do Ator: " + a.retornaAtores() + "\n Data de nascimento: "
+        + a.retornarDatanasc() + "\n Cache por filme: " + a.retornarCache() + "\n Nacionalidade: " + a.retornarNacionalidade()+
+                "\n Vencedor do Oscar: " + vencoscar + "\n Total de filmes: " + a.retornarTotalFilmes() + 
+                "\n Filmes realizados no ultimo ano: " + a.retornarFilmeUltimo() + "\n Ganhos do ator no último ano: " + 
+                a.retornarGanhos());
     }
     
 }

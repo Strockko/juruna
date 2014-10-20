@@ -1,92 +1,84 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package cinema;
 
-/**
- *
- * @author Aluno
- */
 public class Ator {
     
-    String nome;
-    String datanas;
-    String nacionalidade;
-    Boolean vencedorOscar;
-    float cache,ganhos;
-    int totalfilmes,totalfilmesa;
+    String atores, datanasc, nacionalidade;
+    Float cachefilme;
+    Boolean vencoscar; 
+    Integer totalfilmes, filmeultimo;
     
-    void AtribuirNome(String valor)
+    void atribuirAtores (String valor)
     {
-        nome = valor;    
+        atores = valor;
     }
     
-    String retornarNome()
+    String retornaAtores ()
     {
-        return nome;
+        return atores;
     }
     
-    void AtribuirDatanas( String valor){
-        datanas = valor;
-    }
-    
-    String retornarDatanas(){
-        return datanas;
-    }
-    
-    void AtribuirCache ( float valor){
-        cache = valor;
-    }
-    float retornarCache(){
-        return cache;
-    }
-    
-     void AtribuirNacionalidade(String valor)
+    void atribuirDatanasc (String valor)
     {
-        nacionalidade = valor;    
+        datanasc = valor;
     }
     
-    String retornarNacionalidade()
+    String retornarDatanasc ()
+    {
+        return datanasc;
+    }
+    
+    void atribuirCache (Float valor)
+    {
+        cachefilme = valor; 
+    }
+    
+    Float retornarCache ()
+    {
+        return cachefilme;
+    }
+    
+    void atribuirNacionalidade (String valor)
+    {
+        nacionalidade = valor;
+    }
+    
+    String retornarNacionalidade ()
     {
         return nacionalidade;
     }
     
-    void atribuirVencedorOscar (Boolean valor)
+    void atribuirVencOscar (Boolean valor)
     {
-        vencedorOscar = valor;
+        vencoscar = valor;
     }
     
-    Boolean retornarVencedorOscar ()
-    {
-        return vencedorOscar;
+    boolean retornarVencOscar ()
+    {   
+        return vencoscar; 
     }
     
-     void atribuirTotalFimes(int valor)
+    void atribuirTotalFilmes (Integer valor)
     {
-      totalfilmes = valor;
+        totalfilmes = valor;
     }
     
-    int retornarTotalFilmes ()
+    Integer retornarTotalFilmes ()
     {
         return totalfilmes;
     }
     
-    void atribuirTotalFilmesA (int valor)
+    void atribuirFilmeUltimo (Integer valor)
     {
-        totalfilmesa = valor;
+        filmeultimo = valor;
     }
     
-    int retornarTotalFilmesA ()
+    Integer retornarFilmeUltimo ()
     {
-        return totalfilmesa;
+        return filmeultimo;
     }
     
-    float retornarganhosator()
+    Float retornarGanhos ()
     {
-        return totalfilmesa * cache;
-        
+        return (filmeultimo * cachefilme);
     }
 }
