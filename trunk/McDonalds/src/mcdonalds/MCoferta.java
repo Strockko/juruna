@@ -1,31 +1,31 @@
 package mcdonalds;
 
-public class MCoferta {
-    private String hamburguer ;
+public class MCoferta extends Produto {
+    private Hamburguer hamburguer ;
     private String codigo;
     private String preço  ;
     private String nome ;
-    private String batata ;
-    private String bebida;
+    private Batata_Frita batata ;
+    private Bebida bebida;
+    
+    public double ValorDesconto (double desconto){
+                
+        desconto = hamburguer.getPreco()  + batata.getPreço() + bebida.getPreço() ;
+        
+        return desconto ;
+    }
     
     public String Descrição_Oferta (String Descrição_Oferta) {
     
         return Descrição_Oferta;
     }
-    public String getHamburguer() {
+
+    public Hamburguer getHamburguer() {
         return hamburguer;
     }
 
-    public void setHamburguer(String hamburguer) {
+    public void setHamburguer(Hamburguer hamburguer) {
         this.hamburguer = hamburguer;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
     }
 
     public String getPreço() {
@@ -36,28 +36,19 @@ public class MCoferta {
         this.preço = preço;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getBatata() {
+    public Batata_Frita getBatata() {
         return batata;
     }
 
-    public void setBatata(String batata) {
+    public void setBatata(Batata_Frita batata) {
         this.batata = batata;
     }
 
-    public String getBebida() {
+    public Bebida getBebida() {
         return bebida;
     }
 
-    public void setBebida(String bebida) {
+    public void setBebida(Bebida bebida) {
         this.bebida = bebida;
     }
-
-}
+    
