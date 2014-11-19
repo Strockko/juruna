@@ -3,7 +3,7 @@ package mcdonalds;
 public class Batata_Frita {
     private String tamanho ;
     private String codigo;
-    private String preço  ;
+    private double preço  ;
     private String nome ;
 
     public String RetornarCardapio (String RetornarCardapio){
@@ -33,11 +33,11 @@ public class Batata_Frita {
         this.codigo = codigo;
     }
 
-    public String getPreço() {
+    public double getPreço() {
         return preço;
     }
 
-    public void setPreço(String preço) {
+    public void setPreço(double preço) {
         this.preço = preço;
     }
 

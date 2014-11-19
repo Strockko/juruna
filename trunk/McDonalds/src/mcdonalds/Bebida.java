@@ -2,7 +2,7 @@ package mcdonalds;
 
 public class Bebida {
     private String nome ;
-    private String preço ;
+    private double preço ;
     private String codigo ;
     private String unidade_media ;
     private String quantidade ;
@@ -21,11 +21,11 @@ public class Bebida {
         this.nome = nome;
     }
 
-    public String getPreço() {
+    public double getPreço() {
         return preço;
     }
 
-    public void setPreço(String preço) {
+    public void setPreço(double preço) {
         this.preço = preço;
     }
 
