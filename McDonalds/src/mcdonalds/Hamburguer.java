@@ -5,7 +5,7 @@ public class Hamburguer {
     private String nome;
     private String codigo;
     private boolean novo;
-    private String preco;
+    private double preco;
     
     
     public String Descrição_Oferta (String Descrição_Oferta) {
@@ -37,11 +37,11 @@ public class Hamburguer {
         this.novo = novo;
     }
 
-    public String getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
     

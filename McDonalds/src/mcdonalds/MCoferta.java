@@ -50,5 +50,5 @@ public class MCoferta extends Produto {
 
     public void setBebida(Bebida bebida) {
         this.bebida = bebida;
-    }
+    }}
     
